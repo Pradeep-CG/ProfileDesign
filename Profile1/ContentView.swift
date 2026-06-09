@@ -54,14 +54,14 @@ struct ContentView: View {
 }
 struct picView: View {
     var body: some View{
-        Image("pic")
+        Image("pic1")
             .resizable()
             .aspectRatio(contentMode: .fit)
             .clipShape(Circle())
             .overlay {
                 Circle().stroke(.white, lineWidth: 2)
             }
-            .frame(width: 200, height: 200)
+            .frame(width: 160, height: 250)
             //.background(.yellow)
         Text("Ms. Charlotte")
             .font(.title)
@@ -142,7 +142,12 @@ struct picInfo: View{
         List {
             Section {
                 ForEach(listValue, id: \.self) { val in
-                    Text(val)
+                    NavigationLink {
+                        Text("Detail")
+                    } label: {
+                        Text(val)
+                    }
+
                         //.listRowBackground(Color.clear)
                 }
             }
@@ -154,7 +159,7 @@ struct picInfo: View{
                 Text("Privacy & Security")
                 Text("Help & Support")
             }
-            .listRowBackground(LinearGradient(colors: [.white,.gray,.orange,.white], startPoint: .leading, endPoint: .trailing))
+            .listRowBackground(LinearGradient(colors: [.white,.brown], startPoint: .leading, endPoint: .trailing))
             .font(.title3)
         }
         //.padding()
