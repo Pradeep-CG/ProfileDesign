@@ -24,6 +24,7 @@ struct Overview: View {
             
             Spacer()
         }
+        .ignoresSafeArea(edges: .bottom)
     }
     
     var userPic: some View{
